@@ -7,7 +7,7 @@ export class DoctorRes {
   name: string;
   surname: string;
 
-  public static from(res: Partial<DoctorRes>) {
+  private static from(res: Partial<DoctorRes>): DoctorRes {
     const it = new DoctorRes();
     it.id = res.id;
     it.name = res.name;

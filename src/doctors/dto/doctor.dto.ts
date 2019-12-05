@@ -6,8 +6,8 @@ import { IsString, IsUUID } from 'class-validator';
 import { Doctor } from '../entitites/doctor.entity';
 import { ObjectID } from 'typeorm';
 
-export class DoctorDTO implements Readonly<DoctorDTO> {
-  id: string;
+export class CreateDoctorDTO implements Readonly<CreateDoctorDTO> {
+  // id: string;
 
   @IsString()
   name: string;
@@ -17,7 +17,7 @@ export class DoctorDTO implements Readonly<DoctorDTO> {
 
   public toEntity() {
     const it = new Doctor();
-    it._id = this.id;
+    // it._id = this.id;
     it.name = this.name;
     it.surname = this.surname;
     // it.createDateTime = new Date();

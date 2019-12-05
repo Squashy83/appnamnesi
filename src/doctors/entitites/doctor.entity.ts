@@ -1,8 +1,15 @@
-import { Entity, Column, ObjectIdColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  ObjectIdColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('doctors')
 export class Doctor {
   @ObjectIdColumn()
+  // tslint:disable-next-line: variable-name
   _id: string;
 
   @Column()
@@ -10,4 +17,10 @@ export class Doctor {
 
   @Column()
   surname: string;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  createdAt: string;
+
+  @UpdateDateColumn({ type: 'timestamp' })
+  updatedAt: string;
 }
