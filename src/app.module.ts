@@ -4,8 +4,10 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DoctorsModule } from './doctors/doctors.module';
+import { UsersModule } from './users/users.module';
+import { OrganizationsModule } from './organizations/organizations.module';
 import { configService } from './config/config.service';
+import { DateScalar } from './app.resolver';
 
 @Module({
   imports: [
@@ -14,9 +16,10 @@ import { configService } from './config/config.service';
       playground: true,
     }),
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
-    DoctorsModule,
+    UsersModule,
+    OrganizationsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, DateScalar],
 })
 export class AppModule {}

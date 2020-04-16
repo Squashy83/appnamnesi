@@ -1,0 +1,34 @@
+type User {
+  id: String
+  name: String!
+  surname: String!
+  realaddress: Address!
+  legaladdress: Address
+  birthdate: Date!
+  phone: String!
+  email: String
+  fiscalcode: String!
+  currentnationality: String!
+  originnationality: String
+  roles: [UserRole!]!
+}
+
+input CreateUserDTO {
+  name: String!
+  surname: String!
+  realaddress: AddressInput!
+  legaladdress: AddressInput
+  birthdate: Date!
+  phone: String!
+  email: String
+  fiscalcode: String!
+  currentnationality: String!
+  originnationality: String
+  roles: [UserRole!]!
+}
+
+enum UserRole {
+  ADMIN
+  DOCTOR
+  USER
+}

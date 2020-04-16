@@ -36,6 +36,7 @@ class ConfigService {
       password: this.getValue('DB_PASSWORD'),
       database: this.getValue('DB_DATABASE'),
       entities: ['dist/**/*.entity{.ts,.js}'],
+      useUnifiedTopology: true,
       synchronize: true,
     };
     return options;

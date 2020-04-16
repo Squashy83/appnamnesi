@@ -1,0 +1,41 @@
+type Query {
+  users: [User!]
+  organizations: [Organization!]
+}
+
+type Mutation {
+  createUser(input: CreateUserDTO!): User
+  deleteUser(_id: String!): Boolean
+}
+
+type Mutation {
+  createOrganization(input: CreateOrganizationDTO!): Organization
+  deleteOrganization(_id: String!): Boolean
+}
+
+type Address {
+  type: AddressType!
+  address: String!
+  number: Int
+  zipcode: String!
+  city: String!
+  country: String!
+}
+
+input AddressInput {
+  type: AddressType!
+  address: String!
+  number: Int
+  zipcode: String!
+  city: String!
+  country: String!
+}
+
+enum AddressType {
+  Viale
+  Piazza
+  Via
+  Largo
+}
+
+scalar Date

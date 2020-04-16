@@ -1,0 +1,30 @@
+type Organization {
+  id: String
+  creatorId: String!
+  type: String
+  name: String!
+  description: String!
+  logo: String
+  vatnumber: String!
+  phone: String!
+  fiscalcode: String!
+  address: Address!
+}
+
+input CreateOrganizationDTO {
+  creatorId: String!
+  type: OrganizationType
+  name: String!
+  description: String!
+  logo: String
+  vatnumber: String!
+  phone: String!
+  fiscalcode: String!
+  country: String!
+  address: AddressInput!
+}
+
+enum OrganizationType {
+  Onlus
+  Ong
+}
